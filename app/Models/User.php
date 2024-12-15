@@ -49,4 +49,7 @@ class User extends Authenticatable
     function profile(){
         return $this->hasOne(profile::class);
     }
+    function tasks(){
+        return $this->hasMany(Task::class);
+    }
 }

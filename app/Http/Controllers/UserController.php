@@ -56,4 +56,9 @@ class UserController extends Controller
         $profile = User::find($id)->profile;
         return response()->json($profile, 200);
     }
+    function getUserTask($id)
+    {
+        $tasks = User::find($id)->tasks;
+        return response()->json($tasks, 200);
+    }
 }

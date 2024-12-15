@@ -9,5 +9,10 @@ class Task extends Model
 {
     use HasFactory;
     protected $table = 'tasks';
-    protected $fillable = ['title', 'description', 'priority'];
+    protected $fillable = ['title', 'description', 'priority', 'user_id'];
+
+    function user()
+    {
+        return  $this->belongsTo(User::class);
+    }
 }

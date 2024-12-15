@@ -25,6 +25,7 @@ class storeRequest extends FormRequest
             'title' => 'string|required|max:50',
             'description' => 'string|required',
             'priority' => 'integer|required|max:5',
+            'user_id'=>'required|exists:users,id'
         ];
     }
 }

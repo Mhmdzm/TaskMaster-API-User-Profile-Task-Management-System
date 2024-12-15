@@ -54,4 +54,9 @@ class TaskController extends Controller
         $task->delete();
         return response()->json(null, 204);
     }
+    public function getTaskUser($id)
+    {
+        $user = Task::find($id)->user;
+        return response()->json($user, 200);
+    }
 }
