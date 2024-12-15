@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -14,3 +15,12 @@ Route::apiResource('taskss', TaskController::class);
 Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
+
+
+Route::post('profile', [ProfileController::class, 'store']);
+Route::post('profile/{id}', [ProfileController::class, 'update']);
+Route::get('profile/{id}', [ProfileController::class, 'show']);
+
+
+
+Route::get('user/{id}', [UserController::class, 'getProfile']);

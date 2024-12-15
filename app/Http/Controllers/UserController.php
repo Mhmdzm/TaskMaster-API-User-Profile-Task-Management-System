@@ -50,4 +50,10 @@ class UserController extends Controller
             'message' => 'logout successfully'
         ], 200);
     }
+
+    function getProfile($id)
+    {
+        $profile = User::find($id)->profile;
+        return response()->json($profile, 200);
+    }
 }
